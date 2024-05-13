@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+    dev-dna:
+        container_name: dev-dna-container
+        image: dev-dna-image
+        build:
+            context: .
+            target: development
+            dockerfile: Dockerfile
+        ports:
+            - '3000:3000'
+    prod-dna:
+        container_name: prod-dna-container
+        image: prod-dna-image
+        build:
+            context: .
+            target: production
+            dockerfile: Dockerfile
+        ports:
+            - '8080:80'
